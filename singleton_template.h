@@ -39,7 +39,7 @@ class SingletonTemplate {
 
  public:
   static T* Ptr() {
-    alignas(T) static char sing_buf(sizeof(T));
+    alignas(T) static char singBuf[sizeof(T)];
     return reinterpret_cast<T*>(sing_buf);
   }
 };
